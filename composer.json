@@ -1,0 +1,21 @@
+{
+  "name": "oivanov/task1",
+  "authors": [
+    {
+      "name": "Иванов Олег",
+      "email": "ernest.oleg.iv@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Ernesttsenre\\Counter\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "9.5.9"
+  }
+}
