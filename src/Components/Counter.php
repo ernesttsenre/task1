@@ -9,6 +9,8 @@ use Generator;
 
 class Counter
 {
+    private const COUNT_FILENAME = 'count';
+
     public function sumCountInPath(string $path): int
     {
         $totalSum = 0;
@@ -27,9 +29,15 @@ class Counter
 
         foreach ($recursiveIterator as $fileInfo) {
             /** @var SplFileInfo $fileInfo */
-            if ($fileInfo->isFile()) {
-                yield $fileInfo->getPathname();
+            if ($fileInfo->getFilename() !== self::COUNT_FILENAME) {
+                continue;
             }
+
+            if (!$fileInfo->isFile()) {
+                continue;
+            }
+
+            yield $fileInfo->getPathname();
         }
     }
 }
