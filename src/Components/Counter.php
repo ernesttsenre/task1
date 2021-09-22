@@ -29,11 +29,11 @@ class Counter
 
         foreach ($recursiveIterator as $fileInfo) {
             /** @var SplFileInfo $fileInfo */
-            if ($fileInfo->getFilename() !== self::COUNT_FILENAME) {
+            if (!$fileInfo->isFile()) {
                 continue;
             }
 
-            if (!$fileInfo->isFile()) {
+            if ($fileInfo->getFilename() !== self::COUNT_FILENAME) {
                 continue;
             }
 
